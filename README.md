@@ -1,9 +1,9 @@
 # clawlink-hermes-plugin
 
-> [ClawLink](https://claw-link.dev) for [Hermes Agent](https://hermes-agent.nousresearch.com).
-> Connect 100+ third-party apps — Gmail, Slack, Notion, GitHub, Stripe, and more — through one Hermes plugin.
+> [ClawLink](https://claw-link.dev/?utm_source=npm&utm_medium=referral&utm_content=hermes-plugin) for [Hermes Agent](https://hermes-agent.nousresearch.com).
+> Connect 1,000+ third-party apps — Gmail, Slack, Notion, GitHub, Stripe, and more — through one Hermes plugin.
 
-ClawLink manages OAuth and API credentials for you. Install the plugin once, pair it with your ClawLink account in the browser, and Hermes can immediately call any app you connect in the [ClawLink dashboard](https://claw-link.dev/dashboard).
+ClawLink manages OAuth and API credentials for you. Install the plugin once, pair it with your ClawLink account in the browser, and Hermes can immediately call any app you connect in the [ClawLink dashboard](https://claw-link.dev/dashboard?utm_source=npm&utm_medium=referral&utm_content=hermes-plugin).
 
 ## Why this exists
 
@@ -79,7 +79,7 @@ Existing config is backed up to `config.yaml.bak.<timestamp>` before any change.
 
 - Hermes Agent installed and on `PATH`.
 - The Python `mcp` package available in Hermes's interpreter (Hermes installs this for you when MCP servers are configured; the plugin gives a clear `pip install` instruction if it is missing).
-- A ClawLink account at [claw-link.dev](https://claw-link.dev).
+- A ClawLink account at [claw-link.dev](https://claw-link.dev/?utm_source=npm&utm_medium=referral&utm_content=hermes-plugin).
 
 ## Troubleshooting
 
@@ -92,7 +92,7 @@ Existing config is backed up to `config.yaml.bak.<timestamp>` before any change.
 
 ## Development
 
-This package mirrors the production code at [`ClawLink-HQ/clawlink`](https://github.com/ClawLink-HQ/clawlink) under `packages/clawlink-hermes-plugin/`. Releases are cut from this repo (`ClawLink-HQ/hermes-plugin`) so `hermes plugins install` can fetch them directly from GitHub.
+Releases are cut from this repo (`ClawLink-HQ/hermes-plugin`) so `hermes plugins install` can fetch them directly from GitHub. The code is plain, unminified Python, and every outbound request goes to `claw-link.dev` (or to `CLAWLINK_BASE_URL` if you set it).
 
 To test locally without publishing:
 
@@ -114,7 +114,7 @@ python3 -m pytest tests
 - Tokens are stored only in `~/.hermes/config.yaml` and are sent only to `https://claw-link.dev` (or the `CLAWLINK_BASE_URL` you configure for self-hosted setups).
 - Setup/test logging redacts ClawLink credential values before printing command output or error details to the terminal.
 - The plugin makes no outbound network calls during normal Hermes operation — only during `begin`, `finish`, `setup`, `repair`, or `test`.
-- See [`claw-link.dev/verify`](https://claw-link.dev/verify) for build provenance.
+- See [`claw-link.dev/verify`](https://claw-link.dev/verify) for package and security checks.
 
 ## License
 
