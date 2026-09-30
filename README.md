@@ -9,7 +9,7 @@ ClawLink manages OAuth and API credentials for you. Install the plugin once, pai
 
 Hermes connects to external apps through MCP servers, but the bootstrap is manual: editing `~/.hermes/config.yaml`, generating an API key, pasting headers. This plugin owns that setup so you never see the YAML.
 
-The plugin is the recommended install path because it avoids `curl … | python3` patterns that Hermes's `tirith` security scanner flags.
+The plugin is the recommended install path: it installs through `hermes plugins install`, so there is no script to download and run by hand.
 
 ## Install
 
